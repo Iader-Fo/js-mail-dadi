@@ -1,25 +1,40 @@
 // CHIEDO ALL'UTENTE LA SUA MAIL
-const mail = prompt("Qual è la sua mail?");
-console.log ("La mail dell'utente è: " + mail );
+const userEmail = prompt("Qual è la sua mail?");
+console.log("La mail dell'utente è: " + userEmail, typeof userEmail);
 
-// ELENCO MAIL
-const mailList = ["luca@gmail.com", "marco@gmail.com", "paolo@gmail.com", "andrea@gmail.com"];
-console.log("queste sono le mail inserite: " + mailList);
+const mailList = [
+    "luca@gmail.com",
+    "marco@gmail.com",
+    "paolo@gmail.com",
+    "andrea@gmail.com",
+    "mirco@gmail.com"
+];
 
-// FACCIO UN CICLO
-for (let i=0; i < mailList.length; i++){
-    console.log ('i', i , typeof i);
+let validEmail = true;
+if (validEmail == true) {
 
-    if (mail == mailList[i]){
-        console.log("la tua mail è corretta!");
-        i = mailList.length;
-        break;
+    let canAccess = false;
+
+    for(let i = 0; i < mailList.length; i++ ) {
+
+        console.log('mailList[i]', i , mailList[i],typeof mailList[i]);
+
+        if(mailList[i] == userEmail){
+            canAccess = true;
+        }
+        // else{
+        //     message = 'Non puoi entrare';
+        // }
     }
-    else if (i == mailList.length - 1){
-        console.log("la tua mail non è corretta");
-    }   
+
+    if (canAccess == true){
+        alert('Puoi entrare')
+    }
+    else {
+        alert('Non puoi entrare')
+    }
+
 }
-
-
-
-
+else {
+    alert('Email non valida')
+}
